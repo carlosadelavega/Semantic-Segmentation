@@ -28,7 +28,7 @@ Pixel accuracy looks great mostly because background fills most of every image. 
 
 ## What I'd do differently
 
-- **Fix the class count.** The trimaps use labels 1 to 3, but I set `num_classes` to 4. The model ended up with an empty extra class that it still predicts now and then, which is the dark strip along the bottom of the example mask above. Remapping the labels to 0 to 2 and setting `num_classes` to 3 is the first fix.
+- **Fix the class count.** The trimaps use labels 1 to 3, but I set `num_classes` to 4. The model ended up with an empty extra class that it still predicts now and then, which is the red strip along the bottom of the example mask above. Remapping the labels to 0 to 2 and setting `num_classes` to 3 is the first fix.
 - **Report IoU per class.** A single mean hides which class is dragging the score down.
 - **Use batch transform for one-off predictions.** A real-time endpoint makes sense for live traffic. For scoring a folder of images, a batch transform job is cheaper because nothing sits idle.
 
